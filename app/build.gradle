@@ -1,0 +1,153 @@
+/*
+ * Sistem Kasir Java - Build Configuration
+ * Using Hibernate ORM with PostgreSQL
+ */
+
+plugins {
+    id 'application'
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Hibernate ORM
+    implementation 'org.hibernate.orm:hibernate-core:6.4.1.Final'
+    implementation 'org.hibernate.orm:hibernate-hikaricp:6.4.1.Final'
+    
+    // PostgreSQL JDBC Driver
+    implementation 'org.postgresql:postgresql:42.7.1'
+    
+    // HikariCP Connection Pool
+    implementation 'com.zaxxer:HikariCP:5.1.0'
+    
+    // Logging
+    implementation 'org.slf4j:slf4j-api:2.0.9'
+    implementation 'ch.qos.logback:logback-classic:1.4.14'
+    
+    // Jakarta Validation
+    implementation 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
+    implementation 'org.glassfish.expressly:expressly:5.0.0'
+    
+    // Lombok for reducing boilerplate
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+    
+    // BCrypt for password hashing
+    implementation 'org.mindrot:jbcrypt:0.4'
+    
+    // JUnit for testing
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    
+    // Guava utilities
+    implementation 'com.google.guava:guava:32.1.3-jre'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClass = 'com.joko.aplikasijava.App'
+}
+
+// Configure JAR
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'com.joko.aplikasijava.App',
+            'Implementation-Title': 'KASIR PRO',
+            'Implementation-Version': '1.0.0'
+        )
+    }
+}
+
+// Fat JAR task - bundles all dependencies into single JAR
+task fatJar(type: Jar) {
+    archiveBaseName = 'kasirpro'
+    archiveClassifier = 'all'
+    archiveVersion = '1.0.0'
+    
+    manifest {
+        attributes(
+            'Main-Class': 'com.joko.aplikasijava.App',
+            'Implementation-Title': 'KASIR PRO',
+            'Implementation-Version': '1.0.0',
+            'Built-By': 'Joko'
+        )
+    }
+    
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    with jar
+}
+
+// Configure distribution
+distributions {
+    main {
+        distributionBaseName = 'kasirpro'
+        contents {
+            from('../README.md') {
+                into ''
+            }
+        }
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+// Enable console input for Gradle run task
+run {
+    standardInput = System.in
+}
+
+// Custom task to create complete installer package
+task createInstaller(type: Copy, dependsOn: ['fatJar', 'distZip']) {
+    description = 'Creates a complete installer package'
+    group = 'distribution'
+    
+    doFirst {
+        mkdir 'build/installer/kasirpro'
+    }
+    
+    from('build/libs') {
+        include 'kasirpro-1.0.0-all.jar'
+    }
+    from('../README.md')
+    into 'build/installer/kasirpro'
+}
+
+// Print build info
+task info {
+    doLast {
+        println ''
+        println '=========================================='
+        println '  KASIR PRO - Build Information'
+        println '=========================================='
+        println "  Version     : 1.0.0"
+        println "  Java        : ${JavaVersion.current()}"
+        println "  OS          : ${System.getProperty('os.name')}"
+        println ''
+        println '  Build commands:'
+        println '    ./gradlew build          - Build project'
+        println '    ./gradlew fatJar         - Create fat JAR (single file)'
+        println '    ./gradlew distZip        - Create distribution ZIP'
+        println '    ./gradlew createInstaller - Create installer package'
+        println '    ./gradlew run            - Run application'
+        println ''
+        println '  Output locations:'
+        println '    Fat JAR : app/build/libs/kasirpro-1.0.0-all.jar'
+        println '    Dist ZIP: app/build/distributions/kasirpro.zip'
+        println '=========================================='
+    }
+}

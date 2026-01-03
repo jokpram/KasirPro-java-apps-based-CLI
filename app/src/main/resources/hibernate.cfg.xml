@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5433/cronos_db</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">joko1453</property>
+        
+        <!-- HikariCP connection pool settings -->
+        <property name="hibernate.hikari.minimumIdle">5</property>
+        <property name="hibernate.hikari.maximumPoolSize">20</property>
+        <property name="hibernate.hikari.idleTimeout">30000</property>
+        <property name="hibernate.hikari.connectionTimeout">30000</property>
+        
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">false</property>
+        <property name="hibernate.format_sql">true</property>
+        
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="hibernate.current_session_context_class">thread</property>
+        
+        <!-- Mapping classes -->
+        <mapping class="com.joko.aplikasijava.models.User"/>
+        <mapping class="com.joko.aplikasijava.models.Kategori"/>
+        <mapping class="com.joko.aplikasijava.models.Produk"/>
+        <mapping class="com.joko.aplikasijava.models.Pelanggan"/>
+        <mapping class="com.joko.aplikasijava.models.Transaksi"/>
+        <mapping class="com.joko.aplikasijava.models.DetailTransaksi"/>
+        <mapping class="com.joko.aplikasijava.models.Pembayaran"/>
+        <mapping class="com.joko.aplikasijava.models.StokHistory"/>
+        <mapping class="com.joko.aplikasijava.models.Supplier"/>
+        <mapping class="com.joko.aplikasijava.models.PembelianSupplier"/>
+        <mapping class="com.joko.aplikasijava.models.DetailPembelian"/>
+        <mapping class="com.joko.aplikasijava.models.Diskon"/>
+        <mapping class="com.joko.aplikasijava.models.LaporanHarian"/>
+    </session-factory>
+</hibernate-configuration>

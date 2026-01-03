@@ -1,0 +1,56 @@
+2026-01-04 00:51:24.207 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-04 00:51:24.845 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@11ee02f8
+2026-01-04 00:51:24.848 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-04 00:51:25.031 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-04 00:51:30.481 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-01-04 00:51:30.482 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_ldcdaxj9paf46x1ke4c0k41ny" of relation "diskon" does not exist, skipping
+2026-01-04 00:51:30.493 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-01-04 00:51:30.494 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_qw48d051a9g4r4wkdall4rypp" of relation "kategori" does not exist, skipping
+2026-01-04 00:51:30.499 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-01-04 00:51:30.499 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "idx_laporan_tanggal" of relation "laporan_harian" does not exist, skipping
+2026-01-04 00:51:30.513 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-01-04 00:51:30.514 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_30utj3tvlk9elglto03h6txka" of relation "pelanggan" does not exist, skipping
+2026-01-04 00:51:30.566 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-01-04 00:51:30.566 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_dortdo5iokbkjwkm9eumu5nru" of relation "pembelian_supplier" does not exist, skipping
+2026-01-04 00:51:30.588 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-01-04 00:51:30.588 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_bq5mmbqy5ldguhr4wp3g7grn" of relation "produk" does not exist, skipping
+2026-01-04 00:51:30.595 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-01-04 00:51:30.596 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_tr68qx9s912mm4jql3qtffcl9" of relation "produk" does not exist, skipping
+2026-01-04 00:51:30.623 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-01-04 00:51:30.623 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_gg93kvp3mc62al8xnah4jbur2" of relation "supplier" does not exist, skipping
+2026-01-04 00:51:30.647 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-01-04 00:51:30.649 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_55oh012nslxre1qf8qq6yy7vj" of relation "transaksi" does not exist, skipping
+2026-01-04 00:51:30.656 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-01-04 00:51:30.656 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_day7v3q3m6s2pelakp35axkv4" of relation "transaksi" does not exist, skipping
+2026-01-04 00:51:30.672 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-01-04 00:51:30.673 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_6dotkott2kjsp8vw4d0m25fb7" of relation "users" does not exist, skipping
+2026-01-04 00:51:30.678 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-01-04 00:51:30.678 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_r43af9ap4edm43mmtq01oddj6" of relation "users" does not exist, skipping
+2026-01-04 00:51:30.970 [main] INFO  c.j.a.config.HibernateUtil - Hibernate SessionFactory berhasil diinisialisasi
+2026-01-04 00:51:33.392 [main] INFO  c.j.a.services.AuthService - Membuat admin default...
+2026-01-04 00:51:33.761 [main] INFO  c.j.a.services.AuthService - Admin default berhasil dibuat. Username: admin, Password: admin123
+2026-01-04 00:51:33.769 [main] INFO  com.joko.aplikasijava.App - Menginisialisasi sample data...
+2026-01-04 00:51:33.945 [main] INFO  c.j.a.services.ProdukService - Produk berhasil ditambahkan: MKN001
+2026-01-04 00:51:33.960 [main] INFO  c.j.a.services.ProdukService - Produk berhasil ditambahkan: MKN002
+2026-01-04 00:51:33.972 [main] INFO  c.j.a.services.ProdukService - Produk berhasil ditambahkan: MKN003
+2026-01-04 00:51:33.987 [main] INFO  c.j.a.services.ProdukService - Produk berhasil ditambahkan: MNM001
+2026-01-04 00:51:34.002 [main] INFO  c.j.a.services.ProdukService - Produk berhasil ditambahkan: MNM002
+2026-01-04 00:51:34.017 [main] INFO  c.j.a.services.ProdukService - Produk berhasil ditambahkan: MNM003
+2026-01-04 00:51:34.032 [main] INFO  c.j.a.services.ProdukService - Produk berhasil ditambahkan: ATK001
+2026-01-04 00:51:34.044 [main] INFO  c.j.a.services.ProdukService - Produk berhasil ditambahkan: ATK002
+2026-01-04 00:51:34.107 [main] INFO  c.j.a.services.PelangganService - Member baru berhasil ditambahkan: MBR000001
+2026-01-04 00:51:34.122 [main] INFO  c.j.a.services.PelangganService - Member baru berhasil ditambahkan: MBR000002
+2026-01-04 00:51:34.140 [main] INFO  com.joko.aplikasijava.App - Sample data berhasil diinisialisasi
+2026-01-04 00:52:00.898 [main] INFO  c.j.a.services.AuthService - Mencoba login untuk user: admin
+2026-01-04 00:52:01.189 [main] INFO  c.j.a.services.AuthService - Login berhasil untuk user: admin
+2026-01-04 00:52:29.083 [main] INFO  c.j.a.services.TransaksiService - Transaksi baru dimulai: TRX202601040001
+2026-01-04 00:52:50.111 [main] INFO  c.j.a.services.TransaksiService - Item ditambahkan ke keranjang: Indomie Goreng x5
+2026-01-04 00:53:09.743 [main] INFO  c.j.a.services.TransaksiService - Item ditambahkan ke keranjang: Aqua 600ml x3
+2026-01-04 00:53:36.785 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 42804
+2026-01-04 00:53:36.785 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: column "metode_pembayaran" is of type enum_pembayaran_metode_pembayaran but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 198
+2026-01-04 00:54:11.514 [main] INFO  c.j.a.services.TransaksiService - Transaksi dibatalkan: TRX202601040001
+2026-01-04 00:55:43.813 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-04 00:55:43.828 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-04 00:55:43.831 [main] INFO  c.j.a.config.HibernateUtil - Hibernate SessionFactory ditutup
