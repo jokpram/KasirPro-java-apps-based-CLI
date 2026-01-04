@@ -112,7 +112,7 @@ CREATE DATABASE cronos_db;
 ```xml
 <property name="hibernate.connection.url">jdbc:postgresql://localhost:5433/cronos_db</property>
 <property name="hibernate.connection.username">postgres</property>
-<property name="hibernate.connection.password">joko1453</property>
+<property name="hibernate.connection.password">pw1234567</property>
 ```
 
 ### Build & Run
@@ -226,13 +226,9 @@ Aplikasi akan otomatis membuat sample data saat pertama kali dijalankan:
 - Default credentials: admin/admin123
 - Jika user terkunci, gunakan admin lain untuk unlock
 
-## 📄 Lisensi
+## Author
 
-MIT License
-
-## 👨‍💻 Author
-
-**Joko** - Aplikasi Java 2024
+**Joko** - Aplikasi Java 2026
 
 ---
 *KASIR PRO - Solusi POS Modern untuk Bisnis Anda*
